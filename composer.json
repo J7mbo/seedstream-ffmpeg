@@ -1,0 +1,24 @@
+{
+    "name": "j7mbo/seedstream-ffmpeg",
+    "type": "application",
+    "description": "Awesomeness.",
+    "keywords": ["ffmpeg","php", "seedstream", "video", "convert"],
+    "homepage": "http://github.com/j7mbo/seedstream-ffmpeg",
+    "license": "WTFPL (Do What The Fuck You Want To Public License)",
+    "authors": [
+        {
+            "name": "James Mallison",
+            "email": "me@j7mbo.co.uk",
+            "homepage": "http://j7mbo.co.uk",
+            "role": "Author, Developer"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "FFmpeg": "src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    }
+}
