@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get update && apt-get upgrade -y &&
+sudo apt-get update && sudo apt-get upgrade -y &&
 sudo apt-get install -y autoconf automake build-essential git libass-dev libfaac-dev libgpac-dev \
   libmp3lame-dev libopus-dev libtheora-dev libtool libvorbis-dev libvpx-dev pkg-config texi2html \
   zlib1g-dev
@@ -20,14 +20,14 @@ rm -Rf yasm-1.2.0.tar.gz yasm-1.2.0
 git clone --depth 1 git://git.videolan.org/x264.git && \
 cd x264 && \
 ./configure --prefix="/usr/local/src/ffmpeg_build" --bindir="/usr/local/bin" --enable-static && \
-sudo make && sudo make install && make distclean && \
+sudo make && sudo make install && sudo make distclean && \
 cd ..
 
 git clone --depth 1 git://github.com/mstorsjo/fdk-aac.git && \
 cd fdk-aac && \
 autoreconf -fiv && \
 ./configure --prefix="/usr/local/src/ffmpeg_build" --bindir="/usr/local/bin" --disable-shared && \
-sudo make && sudo make install && make distclean && \
+sudo make && sudo make install && sudo make distclean && \
 cd ..
 
 git clone --depth 1 git://source.ffmpeg.org/ffmpeg && \
@@ -36,6 +36,6 @@ cd ffmpeg && \
   --extra-ldflags="-L/usr/local/src/ffmpeg_build/lib" --bindir="/usr/local/bin" --extra-libs="-ldl" --enable-gpl \
   --enable-libass --enable-libfaac --enable-libfdk-aac --enable-libmp3lame --enable-libopus --enable-postproc \
   --enable-libtheora --enable-libvorbis --enable-libvpx --enable-libx264 --enable-nonfree && \
-sudo make && sudo make install && make distclean && \
+sudo make && sudo make install && sudo make distclean && \
 hash -r && \
 cd ..
