@@ -34,7 +34,7 @@ sudo git clone --depth 1 git://source.ffmpeg.org/ffmpeg && \
 cd ffmpeg && \
 sudo ./configure --prefix="/usr/local/src/ffmpeg_build" --extra-cflags="-I/usr/local/src/ffmpeg_build/include" \
   --extra-ldflags="-L/usr/local/src/ffmpeg_build/lib" --bindir="/usr/local/bin" --extra-libs="-ldl" --enable-gpl \
-  --enable-libass --enable-libfaac --enable-libfdk-aac --enable-libmp3lame --enable-libopus --enable-postproc \
+  --enable-libfaac --enable-libfdk-aac --enable-libmp3lame --enable-libopus --enable-postproc \
   --enable-libtheora --enable-libvorbis --enable-libvpx --enable-libx264 --enable-nonfree && \
 sudo make && sudo make install && sudo make distclean && \
 hash -r && \
