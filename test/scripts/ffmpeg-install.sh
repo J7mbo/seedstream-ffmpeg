@@ -6,31 +6,31 @@ sudo apt-get install -y autoconf automake build-essential git libass-dev libfaac
   zlib1g-dev
 
 cd /usr/local/src/ && \
-mkdir ffmpeg_sources && \
+sudo mkdir ffmpeg_sources && \
 cd ffmpeg_sources/
 
-wget http://www.tortall.net/projects/yasm/releases/yasm-1.2.0.tar.gz && \
-tar -xvf yasm-1.2.0.tar.gz && \
+sudo wget http://www.tortall.net/projects/yasm/releases/yasm-1.2.0.tar.gz && \
+sudo tar -xvf yasm-1.2.0.tar.gz && \
 cd yasm-1.2.0 && \
 ./configure --prefix="/usr/local/src/ffmpeg_build" --bindir="/usr/local/bin" && \
 sudo make && sudo make install && sudo make distclean && \
 cd .. && \
-rm -Rf yasm-1.2.0.tar.gz yasm-1.2.0
+sudo rm -Rf yasm-1.2.0.tar.gz yasm-1.2.0
 
-git clone --depth 1 git://git.videolan.org/x264.git && \
-cd x264 && \
+sudo git clone --depth 1 git://git.videolan.org/x264.git && \
+sudo cd x264 && \
 ./configure --prefix="/usr/local/src/ffmpeg_build" --bindir="/usr/local/bin" --enable-static && \
 sudo make && sudo make install && sudo make distclean && \
 cd ..
 
-git clone --depth 1 git://github.com/mstorsjo/fdk-aac.git && \
+sudo git clone --depth 1 git://github.com/mstorsjo/fdk-aac.git && \
 cd fdk-aac && \
 autoreconf -fiv && \
 ./configure --prefix="/usr/local/src/ffmpeg_build" --bindir="/usr/local/bin" --disable-shared && \
 sudo make && sudo make install && sudo make distclean && \
 cd ..
 
-git clone --depth 1 git://source.ffmpeg.org/ffmpeg && \
+sudo git clone --depth 1 git://source.ffmpeg.org/ffmpeg && \
 cd ffmpeg && \
 ./configure --prefix="/usr/local/src/ffmpeg_build" --extra-cflags="-I/usr/local/src/ffmpeg_build/include" \
   --extra-ldflags="-L/usr/local/src/ffmpeg_build/lib" --bindir="/usr/local/bin" --extra-libs="-ldl" --enable-gpl \
