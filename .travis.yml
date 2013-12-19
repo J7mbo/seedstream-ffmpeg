@@ -1,4 +1,13 @@
 language: php
 php:
   - "5.4"
-before_script: ./test/scripts/ffmpeg-install.sh
+
+before_install: 
+  - composer self-update
+  - sh test/scripts/ffmpeg-install.sh
+
+before_script:
+  - composer update --dev
+
+script:
+  - phpunit --configuration test/phpunit.xml.dist
