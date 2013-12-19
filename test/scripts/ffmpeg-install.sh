@@ -12,27 +12,27 @@ cd ffmpeg_sources/
 sudo wget http://www.tortall.net/projects/yasm/releases/yasm-1.2.0.tar.gz && \
 sudo tar -xvf yasm-1.2.0.tar.gz && \
 cd yasm-1.2.0 && \
-./configure --prefix="/usr/local/src/ffmpeg_build" --bindir="/usr/local/bin" && \
+sudo ./configure --prefix="/usr/local/src/ffmpeg_build" --bindir="/usr/local/bin" && \
 sudo make && sudo make install && sudo make distclean && \
 cd .. && \
 sudo rm -Rf yasm-1.2.0.tar.gz yasm-1.2.0
 
 sudo git clone --depth 1 git://git.videolan.org/x264.git && \
 sudo cd x264 && \
-./configure --prefix="/usr/local/src/ffmpeg_build" --bindir="/usr/local/bin" --enable-static && \
+sudo ./configure --prefix="/usr/local/src/ffmpeg_build" --bindir="/usr/local/bin" --enable-static && \
 sudo make && sudo make install && sudo make distclean && \
 cd ..
 
 sudo git clone --depth 1 git://github.com/mstorsjo/fdk-aac.git && \
 cd fdk-aac && \
 autoreconf -fiv && \
-./configure --prefix="/usr/local/src/ffmpeg_build" --bindir="/usr/local/bin" --disable-shared && \
+sudo ./configure --prefix="/usr/local/src/ffmpeg_build" --bindir="/usr/local/bin" --disable-shared && \
 sudo make && sudo make install && sudo make distclean && \
 cd ..
 
 sudo git clone --depth 1 git://source.ffmpeg.org/ffmpeg && \
 cd ffmpeg && \
-./configure --prefix="/usr/local/src/ffmpeg_build" --extra-cflags="-I/usr/local/src/ffmpeg_build/include" \
+sudo ./configure --prefix="/usr/local/src/ffmpeg_build" --extra-cflags="-I/usr/local/src/ffmpeg_build/include" \
   --extra-ldflags="-L/usr/local/src/ffmpeg_build/lib" --bindir="/usr/local/bin" --extra-libs="-ldl" --enable-gpl \
   --enable-libass --enable-libfaac --enable-libfdk-aac --enable-libmp3lame --enable-libopus --enable-postproc \
   --enable-libtheora --enable-libvorbis --enable-libvpx --enable-libx264 --enable-nonfree && \
