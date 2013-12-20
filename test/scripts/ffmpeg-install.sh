@@ -10,6 +10,7 @@ cd /usr/local/src/ && \
 sudo mkdir ffmpeg_sources && \
 cd ffmpeg_sources/
 
+# YASM
 sudo wget http://www.tortall.net/projects/yasm/releases/yasm-1.2.0.tar.gz && \
 sudo tar -xvf yasm-1.2.0.tar.gz && \
 cd yasm-1.2.0 && \
@@ -18,12 +19,23 @@ sudo make && sudo make install && sudo make distclean && \
 cd .. && \
 sudo rm -Rf yasm-1.2.0.tar.gz yasm-1.2.0
 
+# Libmp3lame
+sudo wget http://downloads.sourceforge.net/project/lame/lame/3.99/lame-3.99.5.tar.gz && \
+sudo tar -xvf lame-3.99.5.tar.gz && \
+cd lame-3.99.5.tar.gz && \
+sudo ./configure --prefix="/usr/local/src/ffmpeg_build" --bindir="/usr/local/bin" && \
+sudo make && sudo make install && sudo make disclean && \
+cd .. && \
+sudo rm lame-3.99.5.tar.gz
+
+# x264
 sudo git clone --depth 1 git://git.videolan.org/x264.git && \
 cd x264 && \
 sudo ./configure --prefix="/usr/local/src/ffmpeg_build" --bindir="/usr/local/bin" --enable-static && \
 sudo make && sudo make install && sudo make distclean && \
 cd ..
 
+# fdk-aac
 sudo git clone --depth 1 git://github.com/mstorsjo/fdk-aac.git && \
 cd fdk-aac && \
 sudo autoreconf -fiv && \
