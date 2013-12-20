@@ -12,7 +12,7 @@
 >
     <testsuites>
         <testsuite name="ffmpeg-php Test Suite">
-            <directory>./</directory>
+            <directory>./FFmpeg/</directory>
         </testsuite>
     </testsuites>
 </phpunit>
