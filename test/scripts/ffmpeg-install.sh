@@ -43,6 +43,16 @@ sudo ./configure --prefix="/usr/local/src/ffmpeg_build" --bindir="/usr/local/bin
 sudo make && sudo make install && sudo make distclean && \
 cd ..
 
+# opus
+sudo wget http://downloads.xiph.org/releases/opus/opus-1.1.tar.gz && \
+sudo tar -xvf opus-1.1.tar.gz && \
+cd opus-1.1 && \
+sudo ./configure --prefix="/usr/local/src/ffmpeg_build" --bindir="/usr/local/bin" && \
+sudo make && sudo make install && sudo make disclean && \
+cd .. && \
+sudo rm opus-1.1.tar.gz
+
+
 sudo git clone --depth 1 git://source.ffmpeg.org/ffmpeg && \
 cd ffmpeg && \
 sudo ./configure --prefix="/usr/local/src/ffmpeg_build" --extra-cflags="-I/usr/local/src/ffmpeg_build/include" \
