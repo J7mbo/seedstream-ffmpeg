@@ -10,4 +10,4 @@ before_script:
   - composer update --dev
 
 script:
-  - phpunit --configuration test/phpunit.xml.dist test/FFmpeg/
+  - phpunit --configuration test/phpunit.xml.dist
