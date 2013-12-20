@@ -22,7 +22,7 @@ sudo rm -Rf yasm-1.2.0.tar.gz yasm-1.2.0
 # Libmp3lame
 sudo wget http://downloads.sourceforge.net/project/lame/lame/3.99/lame-3.99.5.tar.gz && \
 sudo tar -xvf lame-3.99.5.tar.gz && \
-cd lame-3.99.5.tar.gz && \
+cd lame-3.99.5 && \
 sudo ./configure --prefix="/usr/local/src/ffmpeg_build" --bindir="/usr/local/bin" && \
 sudo make && sudo make install && sudo make disclean && \
 cd .. && \
