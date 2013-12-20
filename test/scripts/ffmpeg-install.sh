@@ -1,6 +1,12 @@
 #!/bin/bash
 # This script works great on travis ci!
 
+# Append default repo
+sudo echo "deb http://archive.ubuntu.com/ubuntu precise main restricted universe multiverse" | sudo tee -a /etc/apt/sources.list
+sudo echo "deb http://extras.ubuntu.com/ubuntu precise main" | sudo tee -a /etc/apt/sources.list
+sudo echo "deb-src http://extras.ubuntu.com/ubuntu precise main" | sudo tee -a /etc/apt/sources.list
+
+# Update, upgrade etc
 sudo apt-get update && sudo apt-get upgrade -y && \
 sudo apt-get install -y autoconf automake build-essential git libass-dev libgpac-dev \
   libmp3lame-dev libopus-dev libtheora-dev libtool libvorbis-dev libvpx-dev pkg-config texi2html \
