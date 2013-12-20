@@ -14,5 +14,5 @@
         <testsuite name="ffmpeg-php Test Suite">
             <directory>./</directory>
         </testsuite>
-    </testsuites<
+    </testsuites>
 </phpunit>
