@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get update && sudo apt-get upgrade -y &&
+sudo apt-get update && sudo apt-get upgrade -y && \
 sudo apt-get install -y autoconf automake build-essential git libass-dev libfaac-dev libgpac-dev \
   libmp3lame-dev libopus-dev libtheora-dev libtool libvorbis-dev libvpx-dev pkg-config texi2html \
   zlib1g-dev
