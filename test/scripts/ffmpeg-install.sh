@@ -25,7 +25,7 @@ cd ..
 
 sudo git clone --depth 1 git://github.com/mstorsjo/fdk-aac.git && \
 cd fdk-aac && \
-autoreconf -fiv && \
+sudo autoreconf -fiv && \
 sudo ./configure --prefix="/usr/local/src/ffmpeg_build" --bindir="/usr/local/bin" --disable-shared && \
 sudo make && sudo make install && sudo make distclean && \
 cd ..
