@@ -1,7 +1,8 @@
 #!/bin/bash
+# This script works great on travis ci!
 
 sudo apt-get update && sudo apt-get upgrade -y && \
-sudo apt-get install -y autoconf automake build-essential git libass-dev libfaac-dev libgpac-dev \
+sudo apt-get install -y autoconf automake build-essential git libass-dev libgpac-dev \
   libmp3lame-dev libopus-dev libtheora-dev libtool libvorbis-dev libvpx-dev pkg-config texi2html \
   zlib1g-dev
 
@@ -18,7 +19,7 @@ cd .. && \
 sudo rm -Rf yasm-1.2.0.tar.gz yasm-1.2.0
 
 sudo git clone --depth 1 git://git.videolan.org/x264.git && \
-sudo cd x264 && \
+cd x264 && \
 sudo ./configure --prefix="/usr/local/src/ffmpeg_build" --bindir="/usr/local/bin" --enable-static && \
 sudo make && sudo make install && sudo make distclean && \
 cd ..
@@ -34,7 +35,7 @@ sudo git clone --depth 1 git://source.ffmpeg.org/ffmpeg && \
 cd ffmpeg && \
 sudo ./configure --prefix="/usr/local/src/ffmpeg_build" --extra-cflags="-I/usr/local/src/ffmpeg_build/include" \
   --extra-ldflags="-L/usr/local/src/ffmpeg_build/lib" --bindir="/usr/local/bin" --extra-libs="-ldl" --enable-gpl \
-  --enable-libfaac --enable-libfdk-aac --enable-libmp3lame --enable-libopus --enable-postproc \
+  --enable-libfdk-aac --enable-libmp3lame --enable-libopus --enable-postproc \
   --enable-libtheora --enable-libvorbis --enable-libvpx --enable-libx264 --enable-nonfree && \
 sudo make && sudo make install && sudo make distclean && \
 hash -r && \
